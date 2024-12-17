@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@ria-develop/react-esm":  "../",
+    "react": "../",
+    "react-dom": "../"
+  }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Example of React ESM use case</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "react/jsx-runtime": "https://cdn.jsdelivr.net/npm/@ria-develop/react-esm",
+        "react": "https://cdn.jsdelivr.net/npm/@ria-develop/react-esm",
+        "react-dom": "https://cdn.jsdelivr.net/npm/@ria-develop/react-esm",
+        "react-dom/client": "https://cdn.jsdelivr.net/npm/@ria-develop/react-esm"
+      }
+    }
+  </script>
+  <script type="module">
+    import { createRoot } from "react-dom/client";
+    import { StrictMode, Suspense } from "react";
+    import { jsx, jsxs } from "react/jsx-runtime";
+
+    function App() {
+      return jsxs(Suspense, { fallback: "Loading...", children: ['hello'] });
+    }
+
+    const root = createRoot(document.getElementById("root"));
+    root.render(jsx(StrictMode, { children: jsx(App, {}) }));
+  </script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>

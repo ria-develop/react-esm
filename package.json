@@ -1,0 +1,41 @@
+{
+  "name": "@ria-develop/react-esm",
+  "version": "1.0.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ria-develop/react-esm.git"
+  },
+  "author": "Michał Grzegorzewski",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./client": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    }
+  },
+  "main": "./dist/react.js",
+  "types": "./dist/react.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun ./build.ts"
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
